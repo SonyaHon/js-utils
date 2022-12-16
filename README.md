@@ -41,3 +41,11 @@ Zips passed arrays together
 import {zip} from '@sonyahon/js-utils';
 zip(['a', 'b'], [1, 2]); // [['a', 1], ['b', 2]]
 ```
+### String
+#### `capitalize(str: string)`
+Capitalizes a string
+```typescript
+import {capitalize} from '@sonyahon/js-utils';
+capitalize(''); // ''
+capitalize('hello'); // 'Hello'
+```
