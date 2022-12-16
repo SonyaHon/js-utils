@@ -1,0 +1,26 @@
+{
+  "name": "@sonyahon/js-utils",
+  "version": "0.0.0",
+  "description": "A collection of utility functions i use...",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonyaHon/js-utils.git"
+  },
+  "keywords": [
+    "js",
+    "utils"
+  ],
+  "author": "volkov030@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SonyaHon/js-utils/issues"
+  },
+  "homepage": "https://github.com/SonyaHon/js-utils#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
