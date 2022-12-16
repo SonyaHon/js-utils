@@ -25,3 +25,27 @@ export const partition = <T>(array: T[], by: number, window: number = by): (T[])
     }
     return result;
 };
+
+/**
+ * Zips arrays together
+ * * if array's length is not equal, all missing elements will be replaced with undefined
+ * 
+ * @example zip(['a', 'b', 'c'], [1, 2, 3]); // [['a', 1], ['b', 2], ['c', 3]]
+ * 
+ * 
+ * @param arrays arrays to be zipped together
+ * @returns zipped resulting array
+ */
+export const zip = <T extends any[][]>(...arrays: T): (T[number])[] => {
+    const result = [];
+    const maxArrayLength = Math.max(...arrays.map(array => array.length));
+    
+    for (let i = 0; i < maxArrayLength; i++) {
+        const item = [];
+        for(const array of arrays) {
+            item.push(array[i]);
+        }
+        result.push(item);
+    }
+    return result;
+};

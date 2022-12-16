@@ -1,4 +1,4 @@
-import { partition } from '../src';
+import { partition, zip } from '../src';
 
 describe('array-manipulations', () => {
     describe('partition', () => {
@@ -19,5 +19,19 @@ describe('array-manipulations', () => {
         test('should return smaller part if array length is not enough', () => {
             expect(partition(testingArray, 3)).toEqual([testingArray.slice(0, 3), testingArray.slice(3, 6), testingArray.slice(6, 9), [10]]);
         })
+    });
+
+    describe('zip', () => {
+        test('should return array of arrayed elements if called with 1 array', () => {
+            expect(zip([1, 2, 3])).toEqual([[1], [2], [3]]);
+        });
+
+        test('should properly zip equal length arrays', () => {
+            expect(zip(['a', 'b', 'c'], [1, 2, 3])).toEqual([['a', 1], ['b', 2], ['c', 3]]);
+        });
+
+        test('should properly zip if arrays lenthes is different', () => {
+            expect(zip([1, 2, 3], [1, 2])).toEqual([[1, 1], [2, 2], [3, undefined]]);
+        });
     });
 });

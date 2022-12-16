@@ -25,3 +25,10 @@ import {partition} from '@sonyahon/js-utils';
 partition([1, 2, 3, 4], 2); // [[1, 2], [3, 4]]
 partition([1, 2, 3, 4], 3, 1); // [[1, 2, 3], [2, 3, 4]]
 ```
+#### `zip(...arrays: any[][])`
+Zips passed arrays together
+* if length of passed arrays is not equal, undefineds will be used instead of missing elements
+```typescript
+import {zip} from '@sonyahon/js-utils';
+zip(['a', 'b'], [1, 2]); // [['a', 1], ['b', 2]]
+```
