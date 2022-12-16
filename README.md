@@ -7,7 +7,13 @@ A collection of functions i use reguarly and don't want to write again
     yarn add @sonyahon/js-utils
 ```
 
-## Docs
-
+## API
 ### Misc
-* `nop()` - a no operation function, yields undefined. The need is for some linters wich prevernt empty functions and for better readability
+#### `nop()`
+A noop function, yields undefined
+
+### Array manipulations
+#### `partition(target: any[], by: number, window = by)`
+Partitions array with optional padding
+ * if `window` is smaller than `by` elements will be reused
+ * if there is not enough elements in the `target`, last partition will be smaller
