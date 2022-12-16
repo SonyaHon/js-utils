@@ -1,11 +1,12 @@
 {
   "name": "@sonyahon/js-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of utility functions i use...",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
