@@ -10,10 +10,19 @@ A collection of functions i use reguarly and don't want to write again
 ## API
 ### Misc
 #### `nop()`
-A noop function, yields undefined
+A noop function, yields `undefined`
 ```typescript
 import {nop} from '@sonyahon/js-utils';
 nop(); // undefined
+```
+#### `sleep(delay: number, resolveValue?: any)`
+Yields are `Promise`, which resolves after the `delay` ms. The promise yields `resolveValue`, or `undefined` if not supplied.
+```typescript
+import {sleep} from '@sonyahon/js-utils';
+(async () => {
+    await sleep(100); // undefined after 100ms
+    await sleep(100, 'done'); // 'done' after 100ms
+})();
 ```
 ### Array manipulations
 #### `partition(target: any[], by: number, window = by)`
@@ -27,7 +36,7 @@ partition([1, 2, 3, 4], 3, 1); // [[1, 2, 3], [2, 3, 4]]
 ```
 #### `zip(...arrays: any[][])`
 Zips passed arrays together
-* if length of passed arrays is not equal, undefineds will be used instead of missing elements
+* if lengths of passed arrays is not equal, `undefined` will be used instead of missing elements
 ```typescript
 import {zip} from '@sonyahon/js-utils';
 zip(['a', 'b'], [1, 2]); // [['a', 1], ['b', 2]]
