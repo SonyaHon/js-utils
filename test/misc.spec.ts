@@ -1,4 +1,4 @@
-import { nop, sleep } from '../src/misc';
+import { nop, sleep } from '../src';
 
 describe('misc', () => {
   describe('nop', () => {

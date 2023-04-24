@@ -6,9 +6,10 @@
 export const nop = () => undefined;
 
 /**
- * Returns a promise wich resolves after the `delay` ms
+ * Returns a promise which resolves after the `delay` ms
  *
  * @param delay number to sleep in ms
+ * @param resolveValue if provided will resolve with this value
  * @returns void | T
  */
 export const sleep = <T = undefined>(
