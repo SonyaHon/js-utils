@@ -1,6 +1,6 @@
 {
   "name": "@sonyahon/js-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A collection of utility functions i use...",
   "main": "dist/index.js",
   "scripts": {
