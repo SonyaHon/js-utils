@@ -1,8 +1,9 @@
 {
   "name": "@sonyahon/js-utils",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "A collection of utility functions i use...",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
