@@ -9,14 +9,6 @@ export class Result<O, E> {
     return new Result(data, EMPTY_VALUE as E);
   }
 
-  /**
-   * Wrap a function that could throw, so it returns
-   * a Result instead.
-   *
-   * @param fn - a function to be wrapped
-   * @returns wrapped function, which accepts the same arguments, but
-   * returns a Result instead of throwing
-   */
   static wrapFunction<T, V>(
     fn: (...args: T[]) => V,
   ): (...args: T[]) => Result<V, unknown> {
