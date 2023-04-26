@@ -1,4 +1,5 @@
 import { v4 as uuid } from 'uuid';
+import { Result } from './error';
 
 export type EventID = string;
 export type Handle = string;
@@ -29,6 +30,17 @@ export class EventEmitter {
     if (throwIfNotFound) {
       throw new Error(`Handle ${handle} is not found`);
     }
+  }
+
+  offR(handle: Handle): Result<undefined, Error> {
+    const eventHandlers = this.eventsAsArray.find(([, data]) => {
+      return Object.keys(data).includes(handle);
+    });
+    if (eventHandlers) {
+      delete this.eventHandlers[eventHandlers[0]][handle];
+      return Result.Ok(undefined);
+    }
+    return Result.Err(new Error(`Handle ${handle} is not found`));
   }
 
   on<T>(eventId: EventID, handler: Handler<T>): Handle {

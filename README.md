@@ -49,3 +49,8 @@ import {capitalize} from '@sonyahon/js-utils';
 capitalize(''); // ''
 capitalize('hello'); // 'Hello'
 ```
+### Events
+An implementation of `EventEmitter`, with a bit more flexible API than regular node/browser one
+
+### Error
+An implementation of Rust-like `Result<Ok, Err>` type
