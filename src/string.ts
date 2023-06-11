@@ -33,6 +33,7 @@ export const castStringBoolean = (
  * Same as `castStringBoolean` but returns a result instead
  *
  * @param str
+ * @returns {Result<boolean, Error>}
  */
 export const castStringBooleanR = (str: string): Result<boolean, Error> => {
   if (str === 'true') return Result.Ok(true);

@@ -1,4 +1,4 @@
-import { capitalize } from '../src';
+import { capitalize, castStringBoolean, castStringBooleanR } from '../src';
 
 describe('string', () => {
   describe('capitalize', () => {
@@ -12,6 +12,38 @@ describe('string', () => {
 
     test('should capitalize long string', () => {
       expect(capitalize('string')).toBe('String');
+    });
+  });
+
+  describe('castStringBoolean', () => {
+    test('should cast true', () => {
+      expect(castStringBoolean('true')).toBe(true);
+    });
+
+    test('should cast false', () => {
+      expect(castStringBoolean('false')).toBe(false);
+    });
+
+    test('should not cast other values', () => {
+      expect(castStringBoolean('not-a-boolean')).toBe(undefined);
+    });
+
+    test('should throw if throwOnError', () => {
+      expect(() => castStringBoolean('not a boolean', true)).toThrow();
+    });
+  });
+
+  describe('castStringBooleanR', () => {
+    test('should cast true', () => {
+      expect(castStringBooleanR('true').unwrap()).toBe(true);
+    });
+
+    test('should cast false', () => {
+      expect(castStringBooleanR('false').unwrap()).toBe(false);
+    });
+
+    test('should not cast other values', () => {
+      expect(castStringBooleanR('not a boolean').isErr()).toBe(true);
     });
   });
 });
